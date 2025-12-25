@@ -1,0 +1,9 @@
+@use '../utils/variables' as *;
+
+[data-theme="dark"] {
+    --bg-color: #{$color-bg-dark};
+    --text-color: #{$color-text-dark};
+    --bg-gray: #2a2a2a;
+    --border-color: #444;
+    --card-bg: #252525;
+}

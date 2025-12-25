@@ -1,0 +1,9 @@
+@use '../utils/variables' as *;
+
+:root {
+    --bg-color: #{$color-bg-light};
+    --text-color: #{$color-text};
+    --bg-gray: #{$color-bg-gray};
+    --border-color: #{$color-border};
+    --card-bg: #{$color-bg-light};
+}

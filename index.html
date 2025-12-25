@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Babenko To-Do</title>
+    <link rel="stylesheet" href="dist/css/styles.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Мои задачи</h1>
+    <button id="theme-btn" class="btn">Переключить тему</button>
+
+    <div class="search-and-add">
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="Поиск задач по названию..." />
+      </div>
+      <button id="open-add-modal" class="btn">Добавить задачу</button>
+    </div>
+    <ul id="tasks-list" class="tasks-list"></ul>
+  </div>
+
+  <div class="modal modal__add">
+    <div class="modal__content">
+    <span class="modal__close">&times;</span>
+      <h2>Добавить задачу</h2>
+      <form id="add-task-form">
+        <div class="form-group">
+          <label for="task-title-input">Название задачи</label>
+          <input type="text" id="task-title-input" required minlength="1" maxlength="30" />
+        </div>
+        <div class="modal-actions">
+          <button type="submit" class="btn">Создать</button>
+        </div>
+      </form>
+      </div>
+  </div>
+
+  <div class="modal modal__edit">
+    <div class="modal__content">
+      <span class="modal__close">&times;</span>
+      <h2>Редактировать задачу</h2>
+      <form id="edit-task-form">
+        <input type="hidden" id="edit-task-id" />
+        <div class="form-group">
+          <label for="edit-task-title-input">Новое название</label>
+          <input type="text" id="edit-task-title-input" required minlength="1" maxlength="100" />
+        </div>
+        <div class="modal-actions">
+          <button type="submit" class="btn">Сохранить</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal modal__delete">
+    <div class="modal__content">
+      <span class="modal__close">&times;</span>
+      <h2>Удалить задачу?</h2>
+      <p>Вы уверены, что хотите удалить эту задачу? Это действие нельзя отменить.</p>
+      <input type="hidden" id="delete-task-id" />
+      <div class="modal-actions">
+        <button type="button" class="btn" id="confirm-delete">Удалить</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

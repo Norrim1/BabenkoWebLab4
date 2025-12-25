@@ -1,0 +1,21 @@
+@mixin media($breakpoint) {
+    @if $breakpoint == mobile {
+        @media (max-width: 767px) { @content; }
+    } @else if $breakpoint == tablet {
+        @media (min-width: 768px) and (max-width: 1023px) { @content; }
+    } @else if $breakpoint == desktop {
+        @media (min-width: 1024px) { @content; }
+    }
+}
+  
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+@mixin grid-cols($cols: 1, $gap: 20px) {
+    display: grid;
+    grid-template-columns: repeat($cols, 1fr);
+    gap: $gap;
+}

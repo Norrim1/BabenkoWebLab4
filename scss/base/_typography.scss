@@ -1,0 +1,19 @@
+@use '../utils/variables' as *;
+
+body {
+    font-family: $font-stack;
+    font-size: $font-size-base;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    transition: background-color $transition, color $transition;
+}
+
+h1 {
+    margin-bottom: $spacing-lg;
+    font-size: $font-size-h2;
+}
+  
+p {
+    margin-bottom: 0.8em;
+}

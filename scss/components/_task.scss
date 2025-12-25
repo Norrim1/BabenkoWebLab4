@@ -1,0 +1,87 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.tasks-list {
+  list-style: none;
+  padding: 0;
+  margin-top: $spacing-md;
+
+  background: var(--bg-gray);
+  padding: $spacing-md;
+  border-radius: $border-radius;
+
+  &::before {
+    content: '';
+    display: block;
+    height: 0;
+  }
+}
+
+  .task-item {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    background: var($color-bg-gray);
+    border: 1px solid var(--text-color);
+    border-radius: $border-radius;
+    margin-bottom: $spacing-md;
+  
+    &.completed {
+      opacity: 0.7;
+      text-decoration: line-through;
+    }
+  
+    .task-checkbox {
+      margin-right: $spacing-md;
+      width: 20px;
+      height: 20px;
+      background: $color-text;
+      cursor: pointer;
+    }
+  
+    .task-title {
+      flex: 1;
+      font-size: $font-size-base;
+      word-break: break-word;
+    }
+  
+    .task-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .task-btn {
+      background: $color-primary;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      height: 32px;
+      cursor: pointer;
+      color: white;
+      display: flex;
+      @include flex-center;
+  
+      &:hover {
+        background: $color-primary-hover;
+      }
+    }
+  }
+
+  .empty-message {
+    text-align: center;
+    padding: $spacing-lg;
+    color: var(--text-color);
+    opacity: 0.7;
+  }
+  
+  @include media(mobile) {
+    .task-item {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: $spacing-md;
+  
+      .task-actions {
+        align-self: flex-end;
+      }
+    }
+  }
+
